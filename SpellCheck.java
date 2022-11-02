@@ -24,11 +24,14 @@ public class SpellCheck {
 			if (input.equals("")) {
 				break;
 			}
-			if (dict.contains(input)) {
-				System.out.println("\n" + input + " is spelled correctly");
-			} else {
-				System.out.print("is not spelled correctly, ");
-				System.out.println(printSuggestions(input));
+			String[] allWords = input.split(" ", 0);
+			for (String word : allWords) {
+				if (dict.contains(word)) {
+					System.out.println("\n" + word + " is spelled correctly");
+				} else {
+					System.out.print(word + " is not spelled correctly, ");
+					// System.out.println(printSuggestions(input));
+				}
 			}
 		}
 	}
